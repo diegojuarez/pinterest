@@ -2,12 +2,14 @@
 
 
 <h1>Tu eres la vista de Pins</h1>
+ <br>
 
-
-    <% @pins.each do |pin| %>
+<% @pins.each do |pin| %>
+   <div class="row">
     
     <div class="col-md-3">
       <div class="thumbnail">
+       
          <%= pin.name %>
             <%= image_tag(pin.photo, :class => 'img-responsive') %>
              <%= pin.descripcion %>
@@ -18,13 +20,17 @@
                <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' },
                :class => 'btn'%>
            </div>
+
        </div>
+       <% end %>
     </div>
-    <% end %>
+    </div>
+    
   
 
-<br>
 
 
+<p>
 <%= link_to 'New Pin', new_pin_path %>
+</p>
 </div>
